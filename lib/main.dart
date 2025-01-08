@@ -1,8 +1,28 @@
-import 'package:flutter/material.dart';
-import 'package:google_map/Basic_info_map/customise_google_map.dart';
-import 'package:google_map/Basic_info_map/how_to_show_network_image_as_marker_on_map.dart';
+import 'dart:io';
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:google_map/Basic_info_map/home_screen.dart';
+import 'package:google_map/Real-Time%20Car%20GPS%20Tracking%20with%20Google%20Maps/common/globes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uuid/uuid.dart';
+
+import 'Real-Time Car GPS Tracking with Google Maps/common/my_http_overriders.dart';
+import 'Real-Time Car GPS Tracking with Google Maps/common/service_call.dart';
+import 'Real-Time Car GPS Tracking with Google Maps/common/socket_manager.dart';
+
+SharedPreferences? prefs;
+
+void main() async {
+  HttpOverrides.global = MyHttpOverriders();
+  WidgetsFlutterBinding.ensureInitialized();
+  prefs = await SharedPreferences.getInstance();
+  ServiceCall.userUUID = Globes.udValueString('uuid');
+
+  if (ServiceCall.userUUID == '') {
+    ServiceCall.userUUID = const Uuid().v6();
+    Globes.udStringSet(ServiceCall.userUUID, 'uuid');
+  }
+  SocketManager.shared.initSocket();
   runApp(const MyApp());
 }
 
@@ -29,7 +49,10 @@ class MyApp extends StatelessWidget {
       // home: const FlutterDrawPolygonOnGoogleMap(),
       // home: const AddingRoutePolylinesToGoogleMaps(),
       // home: const HowToShowNetworkImageAsMarkerOnMap(),
-      home: const CustomiseGoogleMap(),
+      // home: const CustomiseGoogleMap(),
+
+      /// code snippet for Real-Time Car GPS Tracking with Google Maps
+      home: const MapSample(),
     );
   }
 }

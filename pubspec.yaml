@@ -41,6 +41,8 @@ dependencies:
   http: ^1.2.2
   uuid: ^4.5.1
   custom_info_window: ^1.0.1
+  shared_preferences: ^2.3.5
+  socket_io_client: ^3.0.2
 
 dev_dependencies:
   flutter_test:

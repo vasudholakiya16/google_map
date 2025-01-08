@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_map/map_marker_custom_info_window.dart';
+import 'package:google_map/flutter_draw_polygon_on_google_map.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
       // home: const GetUserCurrentLocationScreen(),
       // home: const GoogleMapAutoCommpletePlace(),
       // home: const AddMultipleCustomMarker(),
-      home: const MapMarkerCustomInfoWindow(),
+      // home: const MapMarkerCustomInfoWindow(),
+      home: const FlutterDrawPolygonOnGoogleMap(),
     );
   }
 }

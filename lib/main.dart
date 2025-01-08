@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_map/customise_google_map.dart';
-import 'package:google_map/how_to_show_network_image_as_marker_on_map.dart';
+import 'package:google_map/Basic_info_map/customise_google_map.dart';
+import 'package:google_map/Basic_info_map/how_to_show_network_image_as_marker_on_map.dart';
 
 void main() {
   runApp(const MyApp());

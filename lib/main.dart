@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_map/google_map_auto_complete_app.dart';
+import 'package:google_map/Add_Multiple_Custom_Marker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
       // home: const ConvertToLatitudeToAddress(),
       // home: const MapSample(),
       // home: const GetUserCurrentLocationScreen(),
-      home: const GoogleMapAutoCommpletePlace(),
+      // home: const GoogleMapAutoCommpletePlace(),
+      home: const AddMultipleCustomMarker(),
     );
   }
 }

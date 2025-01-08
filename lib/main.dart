@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_map/customise_google_map.dart';
 import 'package:google_map/how_to_show_network_image_as_marker_on_map.dart';
 
 void main() {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       // home: const MapMarkerCustomInfoWindow(),
       // home: const FlutterDrawPolygonOnGoogleMap(),
       // home: const AddingRoutePolylinesToGoogleMaps(),
-      home: const HowToShowNetworkImageAsMarkerOnMap(),
+      // home: const HowToShowNetworkImageAsMarkerOnMap(),
+      home: const CustomiseGoogleMap(),
     );
   }
 }

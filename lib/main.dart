@@ -1,28 +1,20 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:google_map/Basic_info_map/home_screen.dart';
-import 'package:google_map/Real-Time%20Car%20GPS%20Tracking%20with%20Google%20Maps/common/globes.dart';
+import 'package:google_map/Intermidate_info_map/current_address/use_place_api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uuid/uuid.dart';
-
-import 'Real-Time Car GPS Tracking with Google Maps/common/my_http_overriders.dart';
-import 'Real-Time Car GPS Tracking with Google Maps/common/service_call.dart';
-import 'Real-Time Car GPS Tracking with Google Maps/common/socket_manager.dart';
 
 SharedPreferences? prefs;
 
 void main() async {
-  HttpOverrides.global = MyHttpOverriders();
-  WidgetsFlutterBinding.ensureInitialized();
-  prefs = await SharedPreferences.getInstance();
-  ServiceCall.userUUID = Globes.udValueString('uuid');
+  // HttpOverrides.global = MyHttpOverriders();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // prefs = await SharedPreferences.getInstance();
+  // ServiceCall.userUUID = Globes.udValueString('uuid');
 
-  if (ServiceCall.userUUID == '') {
-    ServiceCall.userUUID = const Uuid().v6();
-    Globes.udStringSet(ServiceCall.userUUID, 'uuid');
-  }
-  SocketManager.shared.initSocket();
+  // if (ServiceCall.userUUID == '') {
+  //   ServiceCall.userUUID = const Uuid().v6();
+  //   Globes.udStringSet(ServiceCall.userUUID, 'uuid');
+  // }
+  // SocketManager.shared.initSocket();
   runApp(const MyApp());
 }
 
@@ -37,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
       // home: const ConvertToLatitudeToAddress(),
@@ -52,7 +44,13 @@ class MyApp extends StatelessWidget {
       // home: const CustomiseGoogleMap(),
 
       /// code snippet for Real-Time Car GPS Tracking with Google Maps
-      home: const MapSample(),
+      // home: const MapSample(),
+
+      // Intermediate_info_map
+      // home: const FetchLiveAddress(),
+      // home: const MapScreen(),
+      // home: const GoogleMapAutoCommpletePlace(),
+      home: MapScreen(),
     );
   }
 }

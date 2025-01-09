@@ -5,12 +5,13 @@
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+
     <application
         android:label="google_map"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyCUwpbypAzhxGfztajdlgF43fCmVMUZHPA"/>
+               android:value="AIzaSyBjOjo1NlMOsTgDWKxwBc_9rfg7d9Xj9JE"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

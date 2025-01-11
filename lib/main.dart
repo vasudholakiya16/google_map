@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_map/uber_Clone/auth_screen/login_screen.dart';
+import 'package:google_map/uber_Clone/user_app/auth_screen/login_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? prefs;
@@ -18,6 +19,13 @@ void main() async {
   // SocketManager.shared.initSocket();
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
+  // ask for location permission
+  await Permission.locationWhenInUse.isDenied.then((value) {
+    if (value) {
+      Permission.locationWhenInUse.request();
+    }
+  });
+
   runApp(const MyApp());
 }
 

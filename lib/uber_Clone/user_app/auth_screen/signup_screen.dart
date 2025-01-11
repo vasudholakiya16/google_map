@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:google_map/uber_Clone/auth_screen/login_screen.dart';
-import 'package:google_map/uber_Clone/method/common_method.dart';
-import 'package:google_map/uber_Clone/pages/home_page.dart';
-import 'package:google_map/uber_Clone/widgets/loading_dialoge.dart';
+import 'package:google_map/uber_Clone/user_app/auth_screen/login_screen.dart';
+import 'package:google_map/uber_Clone/user_app/method/common_method.dart';
+import 'package:google_map/uber_Clone/user_app/pages/home_page.dart';
+import 'package:google_map/uber_Clone/user_app/widgets/loading_dialoge.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoadingDialoge extends StatelessWidget {
+class LoadingDialogeDriverApp extends StatelessWidget {
   final String message;
-  const LoadingDialoge({super.key, required this.message});
+  const LoadingDialogeDriverApp({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

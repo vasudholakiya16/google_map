@@ -6,11 +6,11 @@ import 'package:google_map/uber_Clone/user_app/method/common_method.dart';
 import 'package:google_map/uber_Clone/user_app/pages/home_page.dart';
 import 'package:google_map/uber_Clone/driver_app/widgets/loading_dialoge.dart';
 
-class SignupScreenUserApp extends StatefulWidget {
-  const SignupScreenUserApp({super.key});
+class SignupScreenDriverApp extends StatefulWidget {
+  const SignupScreenDriverApp({super.key});
 
   @override
-  State<SignupScreenUserApp> createState() => _SignupScreenUserAppState();
+  State<SignupScreenDriverApp> createState() => _SignupScreenDriverAppState();
 }
 
 TextEditingController nameController = TextEditingController();
@@ -93,7 +93,7 @@ registerNewUser(BuildContext context) async {
       context, MaterialPageRoute(builder: (context) => const HomePage()));
 }
 
-class _SignupScreenUserAppState extends State<SignupScreenUserApp> {
+class _SignupScreenDriverAppState extends State<SignupScreenDriverApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

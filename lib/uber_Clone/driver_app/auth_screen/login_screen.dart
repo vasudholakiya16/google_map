@@ -7,17 +7,17 @@ import 'package:google_map/uber_Clone/user_app/method/common_method.dart';
 import 'package:google_map/uber_Clone/user_app/pages/home_page.dart';
 import 'package:google_map/uber_Clone/driver_app/widgets/loading_dialoge.dart';
 
-class LoginScreenUserApp extends StatefulWidget {
-  const LoginScreenUserApp({super.key});
+class LoginScreenDriverApp extends StatefulWidget {
+  const LoginScreenDriverApp({super.key});
 
   @override
-  State<LoginScreenUserApp> createState() => _LoginScreenUserAppState();
+  State<LoginScreenDriverApp> createState() => _LoginScreenDriverAppState();
 }
 
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 
-class _LoginScreenUserAppState extends State<LoginScreenUserApp> {
+class _LoginScreenDriverAppState extends State<LoginScreenDriverApp> {
   CommonMethod commonMethod = CommonMethod();
 
   Future<void> checkIfNetworkIsAvailable(BuildContext context) async {

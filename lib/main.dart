@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_map/uber_Clone/user_app/auth_screen/login_screen.dart';
+import 'package:google_map/uber_Clone/driver_app/auth_screen/login_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

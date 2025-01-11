@@ -74,7 +74,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - images/driverApp
+    - images/userApp
     - assets/maptheme/silver_them.json
     - assets/maptheme/retro_theme.json
     - assets/maptheme/dark_theme.json

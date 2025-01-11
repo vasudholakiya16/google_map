@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
       // home: MapSample(),
 
       /// uber Clone
-      home: const LoginScreen(),
+      home: const LoginScreenDriverApp(),
     );
   }
 }

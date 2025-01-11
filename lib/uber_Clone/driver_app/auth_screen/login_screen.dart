@@ -2,9 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_map/uber_Clone/driver_app/auth_screen/signup_screen.dart';
-import 'package:google_map/uber_Clone/driver_app/global/globad_var.dart';
-import 'package:google_map/uber_Clone/user_app/method/common_method.dart';
-import 'package:google_map/uber_Clone/user_app/pages/home_page.dart';
+import 'package:google_map/uber_Clone/driver_app/method/common_method.dart';
+import 'package:google_map/uber_Clone/driver_app/pages/dashboard.dart';
 import 'package:google_map/uber_Clone/driver_app/widgets/loading_dialoge.dart';
 
 class LoginScreenDriverApp extends StatefulWidget {
@@ -18,7 +17,7 @@ TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
 
 class _LoginScreenDriverAppState extends State<LoginScreenDriverApp> {
-  CommonMethod commonMethod = CommonMethod();
+  CommonMethodForDriverApp commonMethod = CommonMethodForDriverApp();
 
   Future<void> checkIfNetworkIsAvailable(BuildContext context) async {
     await commonMethod.checkConnectivity(context);
@@ -63,15 +62,17 @@ class _LoginScreenDriverAppState extends State<LoginScreenDriverApp> {
       if (userFirebase != null) {
         DatabaseReference newUserRef = FirebaseDatabase.instance
             .ref()
-            .child('users')
+            .child('Drivers')
             .child(userFirebase.uid);
         newUserRef.once().then((snap) {
           final data = snap.snapshot.value as Map?;
           if (data != null) {
             if (data["blockStatus"] == "no") {
-              userName = data["name"];
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+              // userName = data["name"];
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const DashboardPage()));
             } else {
               FirebaseAuth.instance.signOut();
               commonMethod.displaySnackBar(
@@ -94,99 +95,103 @@ class _LoginScreenDriverAppState extends State<LoginScreenDriverApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              Image.asset('images/logo.png'),
-              const Text(
-                "Create User's Account",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(22),
-                child: Column(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset('images/driverApp/uberexec.png'),
+                const Text(
+                  "Create Driver's Account",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(22),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 22),
+                      TextFormField(
+                        controller: emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          labelText: 'Email',
+                          hintText: 'Enter your email',
+                          labelStyle: const TextStyle(fontSize: 14),
+                          hintStyle:
+                              const TextStyle(color: Colors.grey, fontSize: 10),
+                        ),
+                      ),
+                      const SizedBox(height: 22),
+                      TextFormField(
+                        controller: passwordController,
+                        obscureText: true,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          labelText: 'Password',
+                          hintText: 'Enter your password',
+                          labelStyle: const TextStyle(fontSize: 14),
+                          hintStyle:
+                              const TextStyle(color: Colors.grey, fontSize: 10),
+                        ),
+                      ),
+                      const SizedBox(height: 22),
+                      ElevatedButton(
+                        onPressed: () {
+                          checkIfNetworkIsAvailable(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 20, color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 22),
-                    TextFormField(
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        labelText: 'Email',
-                        hintText: 'Enter your email',
-                        labelStyle: const TextStyle(fontSize: 14),
-                        hintStyle:
-                            const TextStyle(color: Colors.grey, fontSize: 10),
-                      ),
+                    const Text(
+                      "Don't have an account? ",
+                      style: TextStyle(fontSize: 16),
                     ),
-                    const SizedBox(height: 22),
-                    TextFormField(
-                      controller: passwordController,
-                      obscureText: true,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        labelText: 'Password',
-                        hintText: 'Enter your password',
-                        labelStyle: const TextStyle(fontSize: 14),
-                        hintStyle:
-                            const TextStyle(color: Colors.grey, fontSize: 10),
-                      ),
-                    ),
-                    const SizedBox(height: 22),
-                    ElevatedButton(
-                      onPressed: () {
-                        checkIfNetworkIsAvailable(context);
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupScreenDriverApp(),
+                          ),
+                        );
                       },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
                       child: const Text(
-                        'Login',
-                        style: TextStyle(fontSize: 20, color: Colors.black),
+                        "Register",
+                        style: TextStyle(
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have an account? ",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignupScreenDriverApp(),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      "Register",
-                      style: TextStyle(
-                        fontSize: 16,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

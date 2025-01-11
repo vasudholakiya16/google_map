@@ -49,6 +49,7 @@ dependencies:
   firebase_auth: ^5.4.0
   firebase_storage: ^12.4.0
   permission_handler: ^11.3.1
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -74,8 +75,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/driverApp
-    - images/userApp
+    - images/driverApp/
+    - images/userApp/
     - assets/maptheme/silver_them.json
     - assets/maptheme/retro_theme.json
     - assets/maptheme/dark_theme.json

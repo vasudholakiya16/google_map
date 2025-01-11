@@ -102,7 +102,7 @@ class _SignupScreenUserAppState extends State<SignupScreenUserApp> {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              Image.asset('images/logo.png'),
+              Image.asset('images/userApp/logo.png'),
               const Text(
                 "Create User's Account",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

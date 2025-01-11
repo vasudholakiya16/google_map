@@ -13,8 +13,10 @@ class LoginScreenDriverApp extends StatefulWidget {
   State<LoginScreenDriverApp> createState() => _LoginScreenDriverAppState();
 }
 
-TextEditingController emailController = TextEditingController();
-TextEditingController passwordController = TextEditingController();
+TextEditingController emailController =
+    TextEditingController(text: "johndoe@example.com");
+TextEditingController passwordController =
+    TextEditingController(text: "123456789");
 
 class _LoginScreenDriverAppState extends State<LoginScreenDriverApp> {
   CommonMethodForDriverApp commonMethod = CommonMethodForDriverApp();

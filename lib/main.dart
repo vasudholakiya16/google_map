@@ -1,6 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_map/Basic_info_map/home_screen.dart';
-import 'package:google_map/Intermidate_info_map/current_address/use_place_api.dart';
 import 'package:google_map/uber_Clone/auth_screen/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,6 +16,8 @@ void main() async {
   //   Globes.udStringSet(ServiceCall.userUUID, 'uuid');
   // }
   // SocketManager.shared.initSocket();
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const MyApp());
 }
 

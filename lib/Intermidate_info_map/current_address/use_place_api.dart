@@ -14,7 +14,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   late GoogleMapController mapController;
-  LatLng currentPosition = const LatLng(37.7749, -122.4194); // Default location
+  LatLng currentPosition = const LatLng(37.7749, -122.4194);
   String address = "Move the marker to fetch the address";
 
   @override
@@ -44,8 +44,7 @@ class _MapScreenState extends State<MapScreen> {
 
   /// Fetches the address using the Geocoding API
   Future<void> _fetchAddress(LatLng position) async {
-    const apiKey =
-        'AIzaSyBjOjo1NlMOsTgDWKxwBc_9rfg7d9Xj9JE'; // Replace with your API key
+    const apiKey = 'AIzaSyCUwpbypAzhxGfztajdlgF43fCmVMUZHPA';
     final String url =
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.latitude},${position.longitude}&key=$apiKey';
 
@@ -53,8 +52,8 @@ class _MapScreenState extends State<MapScreen> {
       final response = await http.get(
         Uri.parse(url),
         headers: {
-          'X-Android-Package': 'com.example.google_map',
-          'X-Android-Cert': 'AIzaSyBjOjo1NlMOsTgDWKxwBc_9rfg7d9Xj9JE',
+          'X-Android-Package': 'com.example.dualdegree_project',
+          'X-Android-Cert': 'AIzaSyCUwpbypAzhxGfztajdlgF43fCmVMUZHPA',
         },
       ).timeout(
         const Duration(seconds: 10),

@@ -41,53 +41,50 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCEsLku0XMorWHK7D0Wba5wiv0PyZ7O5ew',
-    appId: '1:47953457383:web:144be2a5ada28ecac5b242',
-    messagingSenderId: '47953457383',
-    projectId: 'krushimitra-8ba6a',
-    authDomain: 'krushimitra-8ba6a.firebaseapp.com',
-    databaseURL: 'https://krushimitra-8ba6a-default-rtdb.firebaseio.com',
-    storageBucket: 'krushimitra-8ba6a.firebasestorage.app',
-    measurementId: 'G-7RE5R7L00E',
+    apiKey: 'AIzaSyBPbdYHTulDOVaInXivg4ZlmhCuj-g7wpA',
+    appId: '1:436357381387:web:11127e1fe777be4eeef60e',
+    messagingSenderId: '436357381387',
+    projectId: 'flexibandapp',
+    authDomain: 'flexibandapp.firebaseapp.com',
+    storageBucket: 'flexibandapp.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB5mZWP2biwbDKpqvgp-PDQ87J3zUdFLGY',
-    appId: '1:47953457383:android:1aed98575ea14305c5b242',
-    messagingSenderId: '47953457383',
-    projectId: 'krushimitra-8ba6a',
-    databaseURL: 'https://krushimitra-8ba6a-default-rtdb.firebaseio.com',
-    storageBucket: 'krushimitra-8ba6a.firebasestorage.app',
+    apiKey: 'AIzaSyBgM072kq_cHFhvw7MV9cGCJJ1tJcdViq8',
+    appId: '1:436357381387:android:9c43315db5fbb49deef60e',
+    messagingSenderId: '436357381387',
+    projectId: 'flexibandapp',
+    storageBucket: 'flexibandapp.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC2FLH6gG8KgH4ge_SlXNls5OllLi2r0B0',
-    appId: '1:47953457383:ios:cc6e6db6cddfd8b1c5b242',
-    messagingSenderId: '47953457383',
-    projectId: 'krushimitra-8ba6a',
-    databaseURL: 'https://krushimitra-8ba6a-default-rtdb.firebaseio.com',
-    storageBucket: 'krushimitra-8ba6a.firebasestorage.app',
+    apiKey: 'AIzaSyBj_y9BSPxf_Cxt-HW6OvZLvt4veH3mMTo',
+    appId: '1:436357381387:ios:3df85e1f1bd713c3eef60e',
+    messagingSenderId: '436357381387',
+    projectId: 'flexibandapp',
+    storageBucket: 'flexibandapp.appspot.com',
+    androidClientId: '436357381387-3u4pdn3mlcqucodafi88k9tudpbeqr27.apps.googleusercontent.com',
+    iosClientId: '436357381387-m7bc0aqlc0hslkb6j6tjeek17n40r2hu.apps.googleusercontent.com',
     iosBundleId: 'com.example.googleMap',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC2FLH6gG8KgH4ge_SlXNls5OllLi2r0B0',
-    appId: '1:47953457383:ios:cc6e6db6cddfd8b1c5b242',
-    messagingSenderId: '47953457383',
-    projectId: 'krushimitra-8ba6a',
-    databaseURL: 'https://krushimitra-8ba6a-default-rtdb.firebaseio.com',
-    storageBucket: 'krushimitra-8ba6a.firebasestorage.app',
+    apiKey: 'AIzaSyBj_y9BSPxf_Cxt-HW6OvZLvt4veH3mMTo',
+    appId: '1:436357381387:ios:3df85e1f1bd713c3eef60e',
+    messagingSenderId: '436357381387',
+    projectId: 'flexibandapp',
+    storageBucket: 'flexibandapp.appspot.com',
+    androidClientId: '436357381387-3u4pdn3mlcqucodafi88k9tudpbeqr27.apps.googleusercontent.com',
+    iosClientId: '436357381387-m7bc0aqlc0hslkb6j6tjeek17n40r2hu.apps.googleusercontent.com',
     iosBundleId: 'com.example.googleMap',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD1iJb7pEQYLdcpkiawgWk-tPObepckCIw',
-    appId: '1:47953457383:web:7ce0f941ee9fd489c5b242',
-    messagingSenderId: '47953457383',
-    projectId: 'krushimitra-8ba6a',
-    authDomain: 'krushimitra-8ba6a.firebaseapp.com',
-    databaseURL: 'https://krushimitra-8ba6a-default-rtdb.firebaseio.com',
-    storageBucket: 'krushimitra-8ba6a.firebasestorage.app',
-    measurementId: 'G-RCCFMBY514',
+    apiKey: 'AIzaSyBKPv9bl5k5zFpImBOyPunFS-_S94okIOY',
+    appId: '1:436357381387:web:50475cc92fcb8464eef60e',
+    messagingSenderId: '436357381387',
+    projectId: 'flexibandapp',
+    authDomain: 'flexibandapp.firebaseapp.com',
+    storageBucket: 'flexibandapp.appspot.com',
   );
 }
